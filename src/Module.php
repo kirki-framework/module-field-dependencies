@@ -12,6 +12,8 @@
 
 namespace Kirki\Modules\Field_Dependencies;
 
+use Kirki\Core\Kirki;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -71,6 +73,6 @@ class Module {
 			'kirki_package_url_module_field_dependencies',
 			trailingslashit( Kirki::$url ) . 'vendor/kirki-framework/module-field-dependencies/src'
 		);
-		wp_enqueue_script( $url . 'assets/scripts/script.js', [ 'jquery', 'customize-base', 'customize-controls' ], KIRKI_VERSION, true );
+		wp_enqueue_script( 'kirki_field_dependencies', $url . '/assets/scripts/script.js', [ 'jquery', 'customize-base', 'customize-controls' ], KIRKI_VERSION, true );
 	}
 }
